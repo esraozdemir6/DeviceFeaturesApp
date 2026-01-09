@@ -1,9 +1,16 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Button, StyleSheet } from 'react-native';
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Home Screen</Text>
+      <Button
+        title="Camera & Gallery"
+        onPress={() => navigation.navigate('Camera')}
+      />
+      <Button
+        title="Location"
+        onPress={() => navigation.navigate('Location')}
+      />
     </View>
   );
 }
@@ -11,10 +18,8 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  text: {
-    fontSize: 18,
+    gap: 16,
+    justifyContent: 'center',
+    padding: 20,
   },
 });
